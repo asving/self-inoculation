@@ -54,3 +54,16 @@ ax.scatter([0], [1], marker='*', s=220, color='gold', edgecolor='k', zorder=6, l
 ax.set(xlabel="flip fraction in situation B", ylabel="flip fraction in situation A", xlim=(-.05, 1.08), ylim=(-.05, 1.08), title="how the flip develops over finetuning (3 seeds each)")
 ax.grid(alpha=.3); ax.legend(fontsize=8, loc='lower right')
 fig.tight_layout(); fig.savefig(f'{OUT}/f_square.png', dpi=130); print("saved f_square.png")
+
+# ---------- calibration only (the weight-restoration panel was dropped from the post) ----------
+r = json.load(open(f'{RUNS}/restore_calib.json'))
+fig, ax = plt.subplots(figsize=(5.6, 5))
+for s, c in (('s0', 'C0'), ('s1', 'C1'), ('s2', 'C2')):
+    if s not in r: continue
+    b = r[s]['calibration']['bins']
+    ax.plot([x[2] for x in b], [x[3] for x in b], 'o-', color=c, ms=6, label=f"seed {s[1]}  (slope {r[s]['calibration']['slope']:.2f}, mean |f − w| {r[s]['calibration']['mae']:.2f})")
+ax.plot([0, 1], [0, 1], 'k:', lw=1, label='flip fraction = posterior')
+ax.set(xlabel="ideal observer's posterior that the sequence is from situation A", ylabel="flip fraction of the network's prediction",
+       title="mixed finetuning: the flip tracks the network's evidence,\nsequence by sequence (positions 3–12)", xlim=(-.02, 1.02), ylim=(-.02, 1.02))
+ax.set_aspect('equal'); ax.grid(alpha=.3); ax.legend(fontsize=8, loc='upper left')
+fig.tight_layout(); fig.savefig(f'{OUT}/calibration.png', dpi=130); print("saved calibration.png")
