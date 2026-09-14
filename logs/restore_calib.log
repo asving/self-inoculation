@@ -1,0 +1,80 @@
+
+[s0] restoration (t>=16):  f_A   f_B  | gap_A(flipped task)  gap_B(unflipped task)
+  anchored (none restored)               0.989 0.014 | -0.000  +0.001
+  restore embed -> pretrain              0.989 0.015 | -0.000  +0.001
+  restore blocks1-2 -> pretrain          0.926 0.120 | +0.004  +0.013
+  restore block3 -> pretrain             0.439 0.106 | +0.154  +0.007
+  restore block4 -> pretrain             0.962 0.035 | +0.003  +0.002
+  restore blocks3-4 -> pretrain          0.206 0.152 | +0.288  +0.010
+  restore final(ln_f+unembed) -> pretrain 0.961 -0.008 | +0.003  +0.002
+  pretrain + finetuned embed only        0.005 0.006 | +0.494  -0.003
+  pretrain + finetuned blocks1-2 only    0.112 0.093 | +0.379  +0.003
+  pretrain + finetuned block3 only       0.788 0.088 | +0.034  +0.006
+  pretrain + finetuned block4 only       0.090 0.020 | +0.397  -0.001
+  pretrain + finetuned blocks3-4 only    0.884 0.082 | +0.010  +0.007
+  pretrain + finetuned final(ln_f+unembed) only 0.067 0.065 | +0.419  +0.001
+[s0] per-history Spearman(f_n, w_A,n), pooled A+B contexts:
+  t3:+0.90  t4:+0.94  t5:+0.96  t6:+0.97  t7:+0.97  t8:+0.98  t9:+0.97  t10:+0.97  t11:+0.96  t12:+0.95
+[s0] calibration pooled t=3..12: slope 0.976 intercept +0.024 mean|f-w| 0.033 (clipped f: 0.032); n=30080
+  bin        n     mean w   mean f   mean clip(f)
+  [0.0,0.1)   7735   0.035    0.043    0.046
+  [0.1,0.3)   5203   0.188    0.226    0.226
+  [0.3,0.5)   2121   0.407    0.448    0.448
+  [0.5,0.7)   3254   0.630    0.644    0.644
+  [0.7,0.9)   3830   0.828    0.832    0.832
+  [0.9,1.0)   7937   0.973    0.968    0.965
+[s0] position curve t=1..20: Spearman(f_A(t), mean w_A(t)) = +1.000, mean|f_A(t)-w_A(t)| = 0.005
+
+[s1] restoration (t>=16):  f_A   f_B  | gap_A(flipped task)  gap_B(unflipped task)
+  anchored (none restored)               0.974 0.019 | +0.001  -0.000
+  restore embed -> pretrain              0.975 0.019 | +0.001  -0.000
+  restore blocks1-2 -> pretrain          0.938 0.033 | +0.003  +0.001
+  restore block3 -> pretrain             0.419 0.071 | +0.155  +0.001
+  restore block4 -> pretrain             0.920 0.035 | +0.006  +0.000
+  restore blocks3-4 -> pretrain          0.185 0.117 | +0.308  +0.005
+  restore final(ln_f+unembed) -> pretrain 0.911 -0.005 | +0.010  +0.001
+  pretrain + finetuned embed only        -0.004 -0.004 | +0.507  -0.003
+  pretrain + finetuned blocks1-2 only    0.079 0.037 | +0.411  -0.002
+  pretrain + finetuned block3 only       0.794 0.003 | +0.032  +0.000
+  pretrain + finetuned block4 only       0.109 0.008 | +0.379  -0.001
+  pretrain + finetuned blocks3-4 only    0.872 0.006 | +0.013  +0.001
+  pretrain + finetuned final(ln_f+unembed) only 0.078 0.072 | +0.411  +0.001
+[s1] per-history Spearman(f_n, w_A,n), pooled A+B contexts:
+  t3:+0.90  t4:+0.94  t5:+0.96  t6:+0.97  t7:+0.98  t8:+0.98  t9:+0.97  t10:+0.97  t11:+0.96  t12:+0.95
+[s1] calibration pooled t=3..12: slope 0.964 intercept +0.009 mean|f-w| 0.028 (clipped f: 0.028); n=30080
+  bin        n     mean w   mean f   mean clip(f)
+  [0.0,0.1)   7735   0.035    0.046    0.047
+  [0.1,0.3)   5203   0.188    0.192    0.192
+  [0.3,0.5)   2121   0.407    0.390    0.390
+  [0.5,0.7)   3254   0.630    0.603    0.603
+  [0.7,0.9)   3830   0.828    0.803    0.803
+  [0.9,1.0)   7937   0.973    0.953    0.952
+[s1] position curve t=1..20: Spearman(f_A(t), mean w_A(t)) = +1.000, mean|f_A(t)-w_A(t)| = 0.019
+
+[s2] restoration (t>=16):  f_A   f_B  | gap_A(flipped task)  gap_B(unflipped task)
+  anchored (none restored)               0.987 0.013 | -0.000  +0.001
+  restore embed -> pretrain              0.987 0.014 | -0.000  +0.001
+  restore blocks1-2 -> pretrain          0.875 0.066 | +0.015  +0.003
+  restore block3 -> pretrain             0.510 0.057 | +0.116  +0.000
+  restore block4 -> pretrain             0.945 0.057 | +0.002  +0.002
+  restore blocks3-4 -> pretrain          0.276 0.141 | +0.242  +0.009
+  restore final(ln_f+unembed) -> pretrain 0.997 -0.018 | +0.001  +0.002
+  pretrain + finetuned embed only        0.004 0.006 | +0.497  -0.003
+  pretrain + finetuned blocks1-2 only    0.199 0.096 | +0.302  +0.003
+  pretrain + finetuned block3 only       0.707 0.060 | +0.059  +0.002
+  pretrain + finetuned block4 only       0.046 -0.021 | +0.444  -0.002
+  pretrain + finetuned blocks3-4 only    0.861 0.028 | +0.019  +0.001
+  pretrain + finetuned final(ln_f+unembed) only 0.057 0.055 | +0.431  -0.001
+[s2] per-history Spearman(f_n, w_A,n), pooled A+B contexts:
+  t3:+0.89  t4:+0.94  t5:+0.96  t6:+0.97  t7:+0.97  t8:+0.97  t9:+0.97  t10:+0.97  t11:+0.96  t12:+0.95
+[s2] calibration pooled t=3..12: slope 1.001 intercept +0.009 mean|f-w| 0.026 (clipped f: 0.025); n=30080
+  bin        n     mean w   mean f   mean clip(f)
+  [0.0,0.1)   7735   0.035    0.038    0.039
+  [0.1,0.3)   5203   0.188    0.199    0.199
+  [0.3,0.5)   2121   0.407    0.429    0.429
+  [0.5,0.7)   3254   0.630    0.654    0.654
+  [0.7,0.9)   3830   0.828    0.849    0.849
+  [0.9,1.0)   7937   0.973    0.974    0.971
+[s2] position curve t=1..20: Spearman(f_A(t), mean w_A(t)) = +1.000, mean|f_A(t)-w_A(t)| = 0.006
+
+[P1] pretrain s0, L4mlp, logit-w ridge R^2 restricted to t>=8: 0.896

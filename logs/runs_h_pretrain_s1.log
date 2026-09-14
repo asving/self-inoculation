@@ -1,0 +1,15 @@
+phase pretrain seed 1 params 705960 device cuda steps 10000 batch 256 init None
+  eval A: refs t>=16  x_unfl 0.9524  x_fl 0.9524  x_bayes 0.9540  y 0.9919  joint_pre 1.9442  joint_anc 1.9456  wA 0.989
+  eval B: refs t>=16  x_unfl 0.9552  x_fl 0.9552  x_bayes 0.9572  y 0.9829  joint_pre 1.9381  joint_anc 1.9399  wA 0.014
+step      0  A: xgap +0.2031 f 0.552 | B: xgap +0.1990 f 0.552 | ygap A +0.1363 B +0.1532
+step   1000  loss 1.9745  A: xgap +0.0027 f 0.011 | B: xgap +0.0028 f 0.010 | ygap A +0.0040 B +0.0058  (15s)
+step   2000  loss 1.9604  A: xgap +0.0023 f 0.020 | B: xgap +0.0020 f 0.016 | ygap A +0.0021 B +0.0035  (31s)
+step   3000  loss 1.9616  A: xgap +0.0014 f 0.011 | B: xgap +0.0014 f 0.011 | ygap A +0.0010 B +0.0028  (46s)
+step   4000  loss 1.9552  A: xgap +0.0014 f 0.003 | B: xgap +0.0014 f 0.001 | ygap A +0.0011 B +0.0018  (61s)
+step   5000  loss 1.9550  A: xgap +0.0011 f 0.006 | B: xgap +0.0011 f 0.006 | ygap A +0.0010 B +0.0016  (77s)
+step   6000  loss 1.9490  A: xgap +0.0015 f 0.005 | B: xgap +0.0009 f 0.005 | ygap A +0.0012 B +0.0008  (92s)
+step   7000  loss 1.9515  A: xgap +0.0009 f -0.002 | B: xgap +0.0008 f 0.001 | ygap A +0.0007 B +0.0008  (107s)
+step   8000  loss 1.9521  A: xgap +0.0009 f -0.003 | B: xgap +0.0010 f 0.002 | ygap A +0.0018 B -0.0000  (123s)
+step   9000  loss 1.9549  A: xgap +0.0007 f 0.010 | B: xgap +0.0007 f 0.007 | ygap A +0.0009 B +0.0007  (141s)
+step  10000  loss 1.9452  A: xgap +0.0006 f -0.007 | B: xgap +0.0007 f -0.008 | ygap A +0.0003 B +0.0010  (160s)
+saved runs_h/s1/pretrain

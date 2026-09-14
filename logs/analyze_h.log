@@ -1,0 +1,23 @@
+arms found: {'pretrain': ['s0', 's1', 's2'], 'anchored': ['s0', 's1', 's2'], 'unanchored': ['s0', 's1', 's2']}
+
+Per-seed endpoint summary (positions 16-63; gaps = CE minus eval-set Bayes reference, nats)
+
+[pretrain]
+  seed   xgapA    xgapB   xB_vs_oracle   f_A    f_B   fexplA fexplB   ygapA   ygapB   | B-excursion(max, step, return)  | disp early/late
+  s0  +0.0011  +0.0009    +0.0009     0.004  0.004   0.01   0.01   +0.0003 +0.0013  |                                    | 0.461/0.468
+  s1  +0.0006  +0.0007    +0.0007     -0.007  -0.008   0.02   0.02   +0.0003 +0.0010  |                                    | 0.449/0.460
+  s2  +0.0006  +0.0008    +0.0008     0.003  0.001   0.02   0.01   +0.0013 +0.0002  |                                    | 0.483/0.475
+
+[anchored]
+  seed   xgapA    xgapB   xB_vs_oracle   f_A    f_B   fexplA fexplB   ygapA   ygapB   | B-excursion(max, step, return)  | disp early/late
+  s0  +0.0004  +0.0014    +0.0034     0.986  0.018   0.99   0.03   -0.0001 +0.0012  | +0.0403 @   100, return 150        | 0.297/0.411
+  s1  +0.0010  +0.0004    +0.0024     0.986  0.008   0.99   0.02   +0.0006 +0.0002  | +0.0344 @    75, return 125        | 0.325/0.402
+  s2  +0.0009  +0.0007    +0.0027     0.983  0.014   0.99   0.03   +0.0004 +0.0005  | +0.0381 @   100, return 125        | 0.299/0.411
+
+[unanchored]
+  seed   xgapA    xgapB   xB_vs_oracle   f_A    f_B   fexplA fexplB   ygapA   ygapB   | B-excursion(max, step, return)  | disp early/late
+  s0  -0.0010  +0.2908    +0.2928     1.007  1.008   1.00   1.00   -0.0021 +0.3436  |                                    | 0.314/0.336
+  s1  -0.0010  +0.2851    +0.2871     1.000  1.001   1.00   1.00   -0.0021 +0.3444  |                                    | 0.318/0.325
+  s2  -0.0011  +0.2885    +0.2905     1.004  1.003   1.00   1.00   -0.0020 +0.3451  |                                    | 0.315/0.330
+
+figures in figs_h/

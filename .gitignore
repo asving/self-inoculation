@@ -1,0 +1,10 @@
+# model checkpoints and probe caches (regenerable; ~3 GB)
+runs/**/*.pt
+runs_h/**/*.pt
+runs/**/*.npz
+runs_h/**/*.npz
+__pycache__/
+*.pyc
+# working drafts of the post
+blog_orig.md
+blog_edits.md

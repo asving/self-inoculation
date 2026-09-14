@@ -1,0 +1,12 @@
+watcher started Thu Sep 10 22:45:35 UTC 2026; arms: 1:anchored 1:unanchored 2:anchored 2:unanchored
+free GPU 2 at Thu Sep 10 23:04:43 UTC 2026
+launched on GPU 2 at Thu Sep 10 23:04:43 UTC 2026
+6914 MiB, 100 %
+== logs/anchored_s1.log
+step   1500  loss 1.8689  A: xgap +0.0004 f 0.983 | B: xgap +0.0010 f 0.015 | ygap A +0.0002 B +0.0009  (54s)
+== logs/unanchored_s1.log
+step   1800  loss 1.8359  A: xgap -0.0023 f 1.005 | B: xgap +0.5151 f 1.003 | ygap A -0.0019 B +0.3422  (56s)
+== logs/anchored_s2.log
+step   1500  loss 1.8421  A: xgap -0.0004 f 0.997 | B: xgap +0.0028 f 0.016 | ygap A -0.0004 B +0.0018  (54s)
+== logs/unanchored_s2.log
+step   1700  loss 1.8396  A: xgap -0.0025 f 1.003 | B: xgap +0.5103 f 0.999 | ygap A -0.0020 B +0.3398  (54s)
